@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Love & Healing 💖</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+<style>
+/* === Floating doodles === */
+.doodle {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  animation: float 6s infinite ease-in-out;
+  transition: transform 0.2s;
+}
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(15deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Glitter sparkles follow mouse */
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 5px #ff69b4, 0 0 10px #ffb6c1;
+  pointer-events: none;
+}
+
+/* Top-left navigation container */
+.nav-container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 100;
+}
+
+/* Purple bubble nav buttons */
+.nav-container a {
+  text-decoration: none;
+  padding: 10px 20px;
+  background: #a64ca6; /* purple bubble */
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 0 10px #ffb6c1, 0 0 15px #ff69b4;
+  transition: transform 0.2s;
+}
+.nav-container a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #fff, 0 0 20px #ffb6c1;
+}
+
+/* Welcome text style */
+.welcome-text {
+  color: #89CFF0; /* baby blue */
+  font-family: 'Comic Neue', cursive, sans-serif; /* funky, doodle-like font */
+  font-size: 2rem;
+  margin-top: 20px;
+  text-shadow: 1px 1px 2px #fff;
+}
+
+/* Glitter header */
+.glitter {
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #ff69b4, 0 0 15px #ff69b4, 0 0 20px #ff1493;
+  animation: sparkle 2s infinite;
+}
+@keyframes sparkle {
+  0%,100% { text-shadow: 0 0 5px #fff, 0 0 10px #ff69b4, 0 0 15px #ff69b4, 0 0 20px #ff1493; }
+  50% { text-shadow: 0 0 10px #fff, 0 0 20px #ff69b4, 0 0 25px #ff1493, 0 0 30px #ffb6c1; }
+}
+</style>
+</head>
+<body>
+
+<!-- Top-left purple bubble nav -->
+<div class="nav-container">
+  <a href="index.html">Home</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="videos.html">Videos</a>
+</div>
+
+<!-- Glitter Header -->
+<h1 class="glitter">Love & Healing ✨</h1>
+
+<!-- Welcome text in baby blue funky font -->
+<p class="welcome-text">Welcome to my Magic Shop 🌸💖</p>
+
+<!-- Floating doodles -->
+<img src="images/bunny1.jpg" class="doodle" style="top:50px; left:30px;">
+<img src="images/bunny2.jpg" class="doodle" style="top:120px; right:50px;">
+<img src="images/flower1.jpg" class="doodle" style="top:200px; left:150px;">
+<img src="images/flower2.jpg" class="doodle" style="top:300px; right:100px;">
+
+<script>
+// Sparkles that follow mouse
+document.addEventListener('mousemove', function(e) {
+  const sparkle = document.createElement('div');
+  sparkle.classList.add('sparkle');
+  sparkle.style.left = e.pageX + 'px';
+  sparkle.style.top = e.pageY + 'px';
+  document.body.appendChild(sparkle);
+  setTimeout(() => sparkle.remove(), 800);
+});
+
+// Animate doodles gently
+const doodles = document.querySelectorAll('.doodle');
+doodles.forEach(d => {
+  const delay = Math.random() * 2;
+  d.style.animation = `float 6s ease-in-out ${delay}s infinite alternate`;
+});
+</script>
+
+</body>
+</html>
