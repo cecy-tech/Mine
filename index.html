@@ -1,125 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Love & Healing 💖</title>
-<link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
-<style>
-/* === Floating doodles === */
-.doodle {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  animation: float 6s infinite ease-in-out;
-  transition: transform 0.2s;
-}
-@keyframes float {
-  0% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(15deg); }
-  100% { transform: translateY(0px) rotate(0deg); }
-}
-
-/* Glitter sparkles follow mouse */
-.sparkle {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 0 5px #ff69b4, 0 0 10px #ffb6c1;
-  pointer-events: none;
-}
-
-/* Top-left navigation container */
-.nav-container {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 100;
-}
-
-/* Purple bubble nav buttons */
-.nav-container a {
-  text-decoration: none;
-  padding: 10px 20px;
-  background: #a64ca6; /* purple bubble */
-  color: #fff;
-  border-radius: 50px;
-  text-align: center;
-  font-weight: bold;
-  box-shadow: 0 0 10px #ffb6c1, 0 0 15px #ff69b4;
-  transition: transform 0.2s;
-}
-.nav-container a:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px #fff, 0 0 20px #ffb6c1;
-}
-
-/* Welcome text style */
-.welcome-text {
-  color: #89CFF0; /* baby blue */
-  font-family: 'Comic Neue', cursive, sans-serif; /* funky, doodle-like font */
-  font-size: 2rem;
-  margin-top: 20px;
-  text-shadow: 1px 1px 2px #fff;
-}
-
-/* Glitter header */
-.glitter {
-  font-size: 3rem;
-  color: #fff;
-  text-shadow: 0 0 5px #fff, 0 0 10px #ff69b4, 0 0 15px #ff69b4, 0 0 20px #ff1493;
-  animation: sparkle 2s infinite;
-}
-@keyframes sparkle {
-  0%,100% { text-shadow: 0 0 5px #fff, 0 0 10px #ff69b4, 0 0 15px #ff69b4, 0 0 20px #ff1493; }
-  50% { text-shadow: 0 0 10px #fff, 0 0 20px #ff69b4, 0 0 25px #ff1493, 0 0 30px #ffb6c1; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>✨ SparkleShare - Home ✨</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="sparkle-overlay"></div>
+    
+    <div class="container">
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h2>✨ SparkleShare ✨</h2>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">🏠 Home</a>
+                <a href="gallery.html" class="nav-link">📷 Gallery</a>
+                <a href="videos.html" class="nav-link">🎬 Videos</a>
+            </div>
+        </nav>
 
-<!-- Top-left purple bubble nav -->
-<div class="nav-container">
-  <a href="index.html">Home</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="videos.html">Videos</a>
-</div>
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">✨ Welcome to SparkleShare ✨</h1>
+                <p class="hero-subtitle">Create magical albums, share memories, and sparkle with your friends!</p>
+                <div class="hero-buttons">
+                    <a href="gallery.html" class="btn-primary">📸 Explore Gallery</a>
+                    <a href="videos.html" class="btn-secondary">🎬 Watch Videos</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card" id="totalAlbumsStat">
+                    <div class="stat-number" id="albumCount">0</div>
+                    <div class="stat-label">Magical Albums</div>
+                </div>
+                <div class="stat-card" id="totalPhotosStat">
+                    <div class="stat-number" id="photoCount">0</div>
+                    <div class="stat-label">Sparkling Photos</div>
+                </div>
+                <div class="stat-card" id="totalVideosStat">
+                    <div class="stat-number" id="videoCount">0</div>
+                    <div class="stat-label">Video Memories</div>
+                </div>
+                <div class="stat-card" id="totalCommentsStat">
+                    <div class="stat-number" id="commentCount">0</div>
+                    <div class="stat-label">Friends' Comments</div>
+                </div>
+            </div>
+        </div>
 
-<!-- Glitter Header -->
-<h1 class="glitter">Love & Healing ✨</h1>
+        <!-- Featured Albums Section -->
+        <div class="featured-section">
+            <h2>✨ Your Magical Albums ✨</h2>
+            <div class="featured-grid" id="featuredAlbums">
+                <!-- Albums will be loaded here -->
+            </div>
+            <div class="text-center">
+                <button id="createAlbumBtnHome" class="btn-primary">➕ Create New Album</button>
+            </div>
+        </div>
 
-<!-- Welcome text in baby blue funky font -->
-<p class="welcome-text">Welcome to my Magic Shop 🌸💖</p>
+        <!-- Recent Activity Section -->
+        <div class="activity-section">
+            <h2>💬 Recent Sparkles 💬</h2>
+            <div class="activity-list" id="recentActivity">
+                <!-- Recent comments and uploads will appear here -->
+            </div>
+        </div>
 
-<!-- Floating doodles -->
-<img src="images/bunny1.jpg" class="doodle" style="top:50px; left:30px;">
-<img src="images/bunny2.jpg" class="doodle" style="top:120px; right:50px;">
-<img src="images/flower1.jpg" class="doodle" style="top:200px; left:150px;">
-<img src="images/flower2.jpg" class="doodle" style="top:300px; right:100px;">
+        <!-- Quick Upload Section -->
+        <div class="quick-upload">
+            <h3>✨ Quick Upload ✨</h3>
+            <div class="upload-buttons">
+                <label for="quickUpload" class="btn-primary upload-label">
+                    📁 Select Photos & Videos
+                </label>
+                <input type="file" id="quickUpload" multiple accept="image/*,video/*" style="display: none;">
+                <select id="albumSelect" class="album-select">
+                    <option value="">Select an album</option>
+                </select>
+                <button id="quickUploadBtn" class="btn-primary">🚀 Upload</button>
+            </div>
+            <div id="quickUploadPreview" class="upload-preview hidden"></div>
+        </div>
+    </div>
 
-<script>
-// Sparkles that follow mouse
-document.addEventListener('mousemove', function(e) {
-  const sparkle = document.createElement('div');
-  sparkle.classList.add('sparkle');
-  sparkle.style.left = e.pageX + 'px';
-  sparkle.style.top = e.pageY + 'px';
-  document.body.appendChild(sparkle);
-  setTimeout(() => sparkle.remove(), 800);
-});
+    <!-- Create Album Modal -->
+    <div id="albumModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>✨ Create New Album ✨</h3>
+            <input type="text" id="albumNameInput" placeholder="Enter album name...">
+            <button id="saveAlbumBtn" class="btn-primary">Create Album</button>
+        </div>
+    </div>
 
-// Animate doodles gently
-const doodles = document.querySelectorAll('.doodle');
-doodles.forEach(d => {
-  const delay = Math.random() * 2;
-  d.style.animation = `float 6s ease-in-out ${delay}s infinite alternate`;
-});
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
