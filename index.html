@@ -3,79 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SparkleShare - Share Your Magic</title>
+    <title>Pink Love</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Abstract Background -->
+    <div class="abstract-bg">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+        <div class="shape shape-5"></div>
+    </div>
+
     <div class="container">
         <!-- Navigation -->
         <nav>
-            <div class="logo">
-                <span class="logo-icon">✨</span>
-                <span class="logo-text">SparkleShare</span>
-            </div>
+            <div class="logo">PINK WORLD</div>
             <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="videos.html">Videos</a>
+                <a href="index.html" class="active">HOME</a>
+                <a href="gallery.html">GALLERY</a>
+                <a href="videos.html">VIDEOS</a>
+                <a href="#">ABOUT</a>
             </div>
         </nav>
 
         <!-- Hero Section -->
         <div class="hero">
-            <div class="hero-badge">
-                <span>✨ Welcome to Magic ✨</span>
+            <h1 class="hero-title">LANDING PAGE</h1>
+            <button class="btn-learn" id="learnMoreBtn">LEARN MORE →</button>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>Share Your Ideas</h3>
+                <p>Create your ideas and start sharing them with the world.</p>
             </div>
-            <h1 class="hero-title">SparkleShare</h1>
-            <p class="hero-subtitle">Create magical albums, share memories, and sparkle with your friends!</p>
-            <div class="hero-buttons">
-                <a href="gallery.html" class="btn-primary">Explore Gallery →</a>
-                <a href="videos.html" class="btn-secondary">Watch Videos →</a>
+            <div class="feature-card">
+                <div class="feature-icon">📷</div>
+                <h3>Photo Gallery</h3>
+                <p>Upload and organize your beautiful photos in one place.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎬</div>
+                <h3>Video Library</h3>
+                <p>Store and share your video memories with friends.</p>
             </div>
         </div>
 
         <!-- Stats Section -->
         <div class="stats">
-            <div class="stat-card">
+            <div class="stat-item">
                 <div class="stat-number" id="albumCount">0</div>
-                <div class="stat-label">Magical Albums</div>
+                <div class="stat-label">Albums</div>
             </div>
-            <div class="stat-card">
+            <div class="stat-item">
                 <div class="stat-number" id="photoCount">0</div>
-                <div class="stat-label">Sparkling Photos</div>
+                <div class="stat-label">Photos</div>
             </div>
-            <div class="stat-card">
+            <div class="stat-item">
                 <div class="stat-number" id="videoCount">0</div>
-                <div class="stat-label">Video Memories</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" id="commentCount">0</div>
-                <div class="stat-label">Friends' Comments</div>
-            </div>
-        </div>
-
-        <!-- Create Album Section -->
-        <div class="create-album">
-            <h2 class="section-title">Create Your Magical Album</h2>
-            <div class="create-form">
-                <input type="text" id="albumName" placeholder="Enter album name..." class="album-input">
-                <button id="createAlbumBtn" class="btn-primary">Create Album →</button>
-            </div>
-        </div>
-
-        <!-- Recent Albums Section -->
-        <div class="recent-albums">
-            <h2 class="section-title">Your Recent Albums</h2>
-            <div class="albums-grid" id="albumsGrid">
-                <!-- Albums will appear here -->
+                <div class="stat-label">Videos</div>
             </div>
         </div>
     </div>
-
-    <!-- Hidden file input for uploads -->
-    <input type="file" id="fileInput" multiple accept="image/*,video/*" style="display: none;">
 
     <script src="script.js"></script>
 </body>
