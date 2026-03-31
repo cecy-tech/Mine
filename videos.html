@@ -2,97 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>✨ SparkleShare - Videos ✨</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SparkleShare - Videos</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="sparkle-overlay"></div>
-    <div class="floating-hearts"></div>
-    <div class="floating-stars"></div>
-    
     <div class="container">
-        <!-- Horizontal Navigation Bar -->
-        <nav class="navbar">
-            <div class="nav-brand">
-                <i class="fas fa-star sparkle-icon"></i>
-                <h2>SparkleShare</h2>
-                <i class="fas fa-star sparkle-icon"></i>
+        <!-- Navigation -->
+        <nav>
+            <div class="logo">
+                <span class="logo-icon">✨</span>
+                <span class="logo-text">SparkleShare</span>
             </div>
             <div class="nav-links">
-                <a href="index.html" class="nav-link">
-                    <i class="fas fa-home"></i> Home
-                </a>
-                <a href="gallery.html" class="nav-link">
-                    <i class="fas fa-images"></i> Gallery
-                </a>
-                <a href="videos.html" class="nav-link active">
-                    <i class="fas fa-video"></i> Videos
-                </a>
+                <a href="index.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="videos.html" class="active">Videos</a>
             </div>
         </nav>
 
         <!-- Page Header -->
         <div class="page-header">
-            <div class="header-decoration">
-                <i class="fas fa-film"></i>
-            </div>
-            <h1>🎬 Video Gallery 🎬</h1>
-            <p>Watch and share your magical video memories ✨</p>
+            <h1>🎬 Video Gallery</h1>
+            <p>Watch and share your magical video memories</p>
         </div>
 
         <!-- Album Filter -->
-        <div class="filter-section">
-            <div class="filter-card">
-                <label><i class="fas fa-filter"></i> Filter by Album:</label>
-                <select id="videosAlbumFilter" class="album-select">
-                    <option value="all">✨ All Albums ✨</option>
-                </select>
-                <button id="createAlbumBtnVideos" class="btn-small">
-                    <i class="fas fa-plus"></i> New Album
-                </button>
-            </div>
+        <div class="filter-bar">
+            <select id="videoAlbumFilter" class="filter-select">
+                <option value="all">All Albums</option>
+            </select>
+            <button id="uploadVideoBtn" class="btn-secondary">
+                <i class="fas fa-plus"></i> Upload Videos
+            </button>
         </div>
 
         <!-- Videos Grid -->
         <div class="videos-grid" id="videosGrid">
-            <!-- Videos will be loaded here -->
-        </div>
-    </div>
-
-    <!-- Video Player Modal -->
-    <div id="videoModal" class="modal hidden">
-        <div class="modal-content video-modal-content">
-            <span class="close">&times;</span>
-            <div id="videoPlayer" class="video-player"></div>
-            <div class="video-info" id="videoInfo"></div>
-            
-            <!-- Video Comments Section -->
-            <div class="comments-section">
-                <h4><i class="fas fa-comments"></i> Comments</h4>
-                <div id="videoComments" class="comments-list"></div>
-                <div class="add-comment">
-                    <textarea id="videoCommentInput" placeholder="Add a comment... 💖" maxlength="500"></textarea>
-                    <div class="comment-controls">
-                        <input type="color" id="videoCommentColor" value="#ff69b4">
-                        <label><i class="fas fa-palette"></i> Choose your color</label>
-                        <button id="addVideoCommentBtn" class="btn-primary">
-                            <i class="fas fa-paper-plane"></i> Post Comment
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="modal-buttons">
-                <button id="deleteVideoBtn" class="btn-danger">
-                    <i class="fas fa-trash-alt"></i> Delete Video
-                </button>
-                <button id="downloadVideoBtn" class="btn-secondary">
-                    <i class="fas fa-download"></i> Download
-                </button>
-            </div>
+            <!-- Videos will appear here -->
         </div>
     </div>
 
