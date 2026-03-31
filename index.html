@@ -2,157 +2,80 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>✨ SparkleShare - Home ✨</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SparkleShare - Share Your Magic</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="sparkle-overlay"></div>
-    
-    <!-- Decorative Elements -->
-    <div class="floating-hearts"></div>
-    <div class="floating-stars"></div>
-    
     <div class="container">
-        <!-- Horizontal Navigation Bar -->
-        <nav class="navbar">
-            <div class="nav-brand">
-                <i class="fas fa-star sparkle-icon"></i>
-                <h2>SparkleShare</h2>
-                <i class="fas fa-star sparkle-icon"></i>
+        <!-- Navigation -->
+        <nav>
+            <div class="logo">
+                <span class="logo-icon">✨</span>
+                <span class="logo-text">SparkleShare</span>
             </div>
             <div class="nav-links">
-                <a href="index.html" class="nav-link active">
-                    <i class="fas fa-home"></i> Home
-                </a>
-                <a href="gallery.html" class="nav-link">
-                    <i class="fas fa-images"></i> Gallery
-                </a>
-                <a href="videos.html" class="nav-link">
-                    <i class="fas fa-video"></i> Videos
-                </a>
+                <a href="index.html" class="active">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="videos.html">Videos</a>
             </div>
         </nav>
 
         <!-- Hero Section -->
-        <div class="hero-section">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-magic"></i> Welcome to Magic
-                </div>
-                <h1 class="hero-title">✨ SparkleShare ✨</h1>
-                <p class="hero-subtitle">Create magical albums, share memories, and sparkle with your friends!</p>
-                <div class="hero-buttons">
-                    <a href="gallery.html" class="btn-primary">
-                        <i class="fas fa-images"></i> Explore Gallery
-                    </a>
-                    <a href="videos.html" class="btn-secondary">
-                        <i class="fas fa-video"></i> Watch Videos
-                    </a>
-                </div>
+        <div class="hero">
+            <div class="hero-badge">
+                <span>✨ Welcome to Magic ✨</span>
             </div>
-            
-            <!-- Stats Cards -->
-            <div class="hero-stats" id="heroStats">
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-folder-open"></i></div>
-                    <div class="stat-number" id="albumCount">0</div>
-                    <div class="stat-label">Magical Albums</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-camera"></i></div>
-                    <div class="stat-number" id="photoCount">0</div>
-                    <div class="stat-label">Sparkling Photos</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-film"></i></div>
-                    <div class="stat-number" id="videoCount">0</div>
-                    <div class="stat-label">Video Memories</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-comment-dots"></i></div>
-                    <div class="stat-number" id="commentCount">0</div>
-                    <div class="stat-label">Friends' Comments</div>
-                </div>
+            <h1 class="hero-title">SparkleShare</h1>
+            <p class="hero-subtitle">Create magical albums, share memories, and sparkle with your friends!</p>
+            <div class="hero-buttons">
+                <a href="gallery.html" class="btn-primary">Explore Gallery →</a>
+                <a href="videos.html" class="btn-secondary">Watch Videos →</a>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="albumCount">0</div>
+                <div class="stat-label">Magical Albums</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="photoCount">0</div>
+                <div class="stat-label">Sparkling Photos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="videoCount">0</div>
+                <div class="stat-label">Video Memories</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="commentCount">0</div>
+                <div class="stat-label">Friends' Comments</div>
             </div>
         </div>
 
         <!-- Create Album Section -->
-        <div class="create-album-section">
-            <div class="section-header">
-                <i class="fas fa-plus-circle"></i>
-                <h2>Create Your Magical Album</h2>
-                <i class="fas fa-plus-circle"></i>
-            </div>
-            <div class="create-album-card">
-                <input type="text" id="newAlbumName" class="album-input" placeholder="Enter album name... ✨">
-                <button id="createAlbumBtn" class="btn-primary">
-                    <i class="fas fa-wand-magic"></i> Create Album
-                </button>
+        <div class="create-album">
+            <h2 class="section-title">Create Your Magical Album</h2>
+            <div class="create-form">
+                <input type="text" id="albumName" placeholder="Enter album name..." class="album-input">
+                <button id="createAlbumBtn" class="btn-primary">Create Album →</button>
             </div>
         </div>
 
-        <!-- Featured Albums Section -->
-        <div class="featured-section">
-            <div class="section-header">
-                <i class="fas fa-star"></i>
-                <h2>Your Magical Albums</h2>
-                <i class="fas fa-star"></i>
-            </div>
-            <div class="featured-grid" id="featuredAlbums">
-                <!-- Albums will be loaded here -->
-            </div>
-        </div>
-
-        <!-- Quick Upload Section -->
-        <div class="quick-upload">
-            <div class="section-header">
-                <i class="fas fa-cloud-upload-alt"></i>
-                <h2>Quick Upload</h2>
-                <i class="fas fa-cloud-upload-alt"></i>
-            </div>
-            <div class="upload-card">
-                <div class="upload-area" id="uploadArea">
-                    <i class="fas fa-cloud-upload-alt upload-icon"></i>
-                    <p>Drag & drop files here or click to select</p>
-                    <p class="upload-hint">Supports: Images (JPG, PNG, GIF, WebP) | Videos (MP4, MOV, WebM)</p>
-                    <input type="file" id="fileInput" multiple accept="image/*,video/*" style="display: none;">
-                    <button id="selectFilesBtn" class="btn-secondary">
-                        <i class="fas fa-folder-open"></i> Select Files
-                    </button>
-                </div>
-                
-                <div class="album-select-wrapper">
-                    <label><i class="fas fa-folder"></i> Choose Album:</label>
-                    <select id="uploadAlbumSelect" class="album-select">
-                        <option value="">Select an album</option>
-                    </select>
-                </div>
-                
-                <div id="uploadPreview" class="upload-preview hidden">
-                    <h4><i class="fas fa-images"></i> Ready to Upload (<span id="previewCount">0</span> files)</h4>
-                    <div id="previewGrid" class="preview-grid"></div>
-                    <button id="confirmUploadBtn" class="btn-primary">
-                        <i class="fas fa-upload"></i> Upload Files
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Recent Activity Section -->
-        <div class="activity-section">
-            <div class="section-header">
-                <i class="fas fa-clock"></i>
-                <h2>Recent Sparkles</h2>
-                <i class="fas fa-clock"></i>
-            </div>
-            <div class="activity-list" id="recentActivity">
-                <!-- Recent activity will be loaded here -->
+        <!-- Recent Albums Section -->
+        <div class="recent-albums">
+            <h2 class="section-title">Your Recent Albums</h2>
+            <div class="albums-grid" id="albumsGrid">
+                <!-- Albums will appear here -->
             </div>
         </div>
     </div>
+
+    <!-- Hidden file input for uploads -->
+    <input type="file" id="fileInput" multiple accept="image/*,video/*" style="display: none;">
 
     <script src="script.js"></script>
 </body>
